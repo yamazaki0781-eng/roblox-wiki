@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RoWiki JP — Roblox最強Wiki・コード・攻略【2026年最新】</title>
+<meta name="description" content="Roblox（ロブロックス）の人気ゲーム100本以上を掲載。最新コード・攻略Wiki・ランキングを毎日更新。Blox Fruits・Grow a Garden・99 Nights in the Forestなどのコードがすぐわかる！">
+<meta name="keywords" content="Roblox,ロブロックス,コード,攻略,Wiki,ランキング,Blox Fruits,Grow a Garden,99 Nights">
+<meta property="og:title" content="RoWiki JP — Roblox最強Wiki・コード・攻略">
+<meta property="og:description" content="Robloxの人気ゲーム100本以上を掲載。最新コードを毎日更新！">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://rowiki.jp/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Dots&family=Noto+Sans+JP:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --red: #FF2B2B;
+  --red2: #FF6B35;
+  --dark: #08080E;
+  --dark2: #0F0F1A;
+  --dark3: #161625;
+  --card: #13131F;
+  --card2: #1A1A2E;
+  --border: #252540;
+  --border2: #2E2E50;
+  --text: #EEEEFF;
+  --muted: #7777AA;
+  --muted2: #555575;
+  --accent: #FFD700;
+  --green: #00FF88;
+  --blue: #4488FF;
+  --purple: #9B59F5;
+  --pink: #FF6B9D;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--dark);
+  color: var(--text);
+  font-family: 'Noto Sans JP', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ========== TICKER ========== */
+.ticker-wrap {
+  background: var(--red);
+  overflow: hidden;
+  padding: 5px 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker 40s linear infinite;
+}
+.ticker-track:hover { animation-play-state: paused; }
+.ticker-item { white-space: nowrap; padding: 0 40px; }
+@keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ========== HEADER ========== */
+header {
+  background: var(--dark2);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  box-shadow: 0 2px 30px rgba(0,0,0,0.5);
+}
+.header-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  height: 60px;
+}
+.logo {
+  font-family: 'Zen Dots', sans-serif;
+  font-size: 1.5rem;
+  color: var(--red);
+  text-decoration: none;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.logo .white { color: var(--text); }
+.logo .badge {
+  font-size: 0.55rem;
+  background: var(--accent);
+  color: #000;
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 900;
+  margin-left: 6px;
+  letter-spacing: 0.5px;
+}
+nav { display: flex; gap: 2px; flex: 1; }
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+nav a:hover { color: var(--text); background: var(--dark3); }
+nav a.active { color: var(--red); }
+.header-search {
+  position: relative;
+  flex-shrink: 0;
+}
+.header-search input {
+  background: var(--dark3);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 7px 36px 7px 14px;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  width: 220px;
+  outline: none;
+  transition: border-color 0.2s, width 0.3s;
+}
+.header-search input:focus { border-color: var(--red); width: 280px; }
+.header-search input::placeholder { color: var(--muted2); }
+.header-search .search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted);
+  pointer-events: none;
+  font-size: 0.9rem;
+}
+
+/* ========== HERO ========== */
+.hero {
+  background: linear-gradient(180deg, var(--dark2) 0%, var(--dark) 100%);
+  padding: 64px 24px 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero-glow {
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 400px;
+  background: radial-gradient(ellipse, rgba(255,43,43,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(255,43,43,0.35);
+  background: rgba(255,43,43,0.08);
+  color: var(--red);
+  padding: 5px 16px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.live-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--red);
+  border-radius: 50%;
+  animation: livepulse 1.2s ease-in-out infinite;
+  box-shadow: 0 0 6px var(--red);
+}
+@keyframes livepulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+.hero h1 {
+  font-family: 'Zen Dots', sans-serif;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 1.1;
+  margin-bottom: 16px;
+  letter-spacing: -1px;
+}
+.hero h1 .red { color: var(--red); }
+.hero h1 .gold { color: var(--accent); }
+.hero-sub {
+  color: var(--muted);
+  font-size: 1rem;
+  max-width: 560px;
+  margin: 0 auto 36px;
+}
+.stats-strip {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  max-width: 600px;
+  margin: 0 auto;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--card);
+}
+.stat-cell {
+  flex: 1;
+  padding: 16px 12px;
+  text-align: center;
+  border-right: 1px solid var(--border);
+}
+.stat-cell:last-child { border-right: none; }
+.stat-num {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--red);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.stat-label {
+  font-size: 0.7rem;
+  color: var(--muted);
+  letter-spacing: 0.5px;
+}
+
+/* ========== LAYOUT ========== */
+.site-wrap {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 28px;
+}
+
+/* ========== SIDEBAR ========== */
+.sidebar { display: flex; flex-direction: column; gap: 20px; }
+.sidebar-sticky { position: sticky; top: 76px; display: flex; flex-direction: column; gap: 20px; }
+.sb-box {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.sb-head {
+  padding: 10px 16px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, rgba(255,43,43,0.2), transparent);
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.sb-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 16px;
+  font-size: 0.84rem;
+  cursor: pointer;
+  transition: background 0.15s;
+  border-left: 3px solid transparent;
+  text-decoration: none;
+  color: var(--text);
+}
+.sb-item:hover { background: rgba(255,255,255,0.03); }
+.sb-item.active { border-left-color: var(--red); background: rgba(255,43,43,0.06); color: var(--red); }
+.sb-item .sb-icon { font-size: 1rem; width: 22px; text-align: center; flex-shrink: 0; }
+.sb-item .sb-name { flex: 1; font-size: 0.82rem; }
+.sb-rank {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--muted2);
+}
+.sb-hot-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--red);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.genre-pill-wrap { padding: 12px; display: flex; flex-wrap: wrap; gap: 6px; }
+.genre-pill {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  background: transparent;
+  font-family: inherit;
+  transition: all 0.15s;
+}
+.genre-pill:hover { color: var(--text); border-color: var(--muted); }
+.genre-pill.active { background: var(--red); border-color: var(--red); color: white; }
+
+/* ========== CONTENT ========== */
+.content {}
+.content-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.section-h {
+  font-family: 'Zen Dots', sans-serif;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.live-indicator {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.72rem;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 400;
+  color: var(--muted);
+}
+.sort-row { display: flex; gap: 8px; align-items: center; }
+.sort-btn {
+  padding: 5px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.sort-btn:hover { color: var(--text); border-color: var(--muted); }
+.sort-btn.active { background: var(--card2); border-color: var(--border2); color: var(--text); }
+.result-count { font-size: 0.78rem; color: var(--muted); }
+
+/* ========== GAME GRID ========== */
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 14px;
+}
+.empty-state {
+  grid-column: 1/-1;
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* ========== CARD ========== */
+.game-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+.game-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255,43,43,0.5);
+  box-shadow: 0 12px 40px rgba(255,43,43,0.12);
+}
+.card-thumb {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.card-thumb-emoji {
+  font-size: 3.5rem;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));
+}
+.card-thumb-glow {
+  position: absolute;
+  inset: 0;
+  opacity: 0.3;
+}
+.card-badge-rank {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(0,0,0,0.7);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 3px 7px;
+  border-radius: 5px;
+  z-index: 2;
+}
+.card-badge-rank.top3 { color: var(--accent); border-color: var(--accent); }
+.card-badge-hot {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--red);
+  color: white;
+  font-size: 0.62rem;
+  font-weight: 900;
+  padding: 3px 8px;
+  border-radius: 5px;
+  z-index: 2;
+  letter-spacing: 0.5px;
+  animation: hotglow 2s ease-in-out infinite;
+}
+@keyframes hotglow { 0%,100%{box-shadow:0 0 8px rgba(255,43,43,0.5)} 50%{box-shadow:0 0 20px rgba(255,43,43,0.8)} }
+.card-body { padding: 14px 15px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
+.card-genre-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+.card-title { font-size: 1rem; font-weight: 900; line-height: 1.3; }
+.card-desc {
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.55;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex: 1;
+}
+.card-meta { display: flex; gap: 14px; }
+.card-meta-item { display: flex; align-items: center; gap: 4px; font-size: 0.72rem; color: var(--muted); }
+.card-meta-item strong { color: var(--text); }
+
+/* CODES MINI */
+.codes-mini {
+  background: var(--dark3);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 10px 12px;
+}
+.codes-mini-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 7px;
+}
+.codes-mini-label {
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.code-count-badge {
+  background: var(--accent);
+  color: #000;
+  font-size: 0.6rem;
+  font-weight: 900;
+  padding: 1px 6px;
+  border-radius: 8px;
+}
+.codes-mini-list { display: flex; flex-direction: column; gap: 4px; }
+.code-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.code-chip {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.68rem;
+  background: rgba(0,255,136,0.08);
+  border: 1px solid rgba(0,255,136,0.25);
+  color: var(--green);
+  padding: 3px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.15s;
+  flex: 1;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.code-chip:hover { background: rgba(0,255,136,0.15); }
+.code-chip.new-code::before { content: "🆕 "; }
+.code-reward-mini { font-size: 0.65rem; color: var(--muted); text-align: right; flex-shrink: 0; max-width: 90px; }
+.no-code-msg { font-size: 0.72rem; color: var(--muted2); text-align: center; font-style: italic; padding: 2px 0; }
+.card-actions { display: flex; gap: 8px; margin-top: 4px; }
+.card-btn {
+  flex: 1;
+  padding: 7px 0;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  transition: all 0.15s;
+  letter-spacing: 0.3px;
+}
+.card-btn-primary { background: var(--red); color: white; }
+.card-btn-primary:hover { background: #ff4545; }
+.card-btn-secondary { background: transparent; border: 1px solid var(--border); color: var(--muted); }
+.card-btn-secondary:hover { color: var(--text); border-color: var(--border2); }
+
+/* ========== MODAL ========== */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.88);
+  z-index: 1000;
+  display: none;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto;
+  backdrop-filter: blur(6px);
+}
+.overlay.open { display: flex; }
+.modal {
+  background: var(--dark2);
+  border: 1px solid var(--border2);
+  border-radius: 18px;
+  max-width: 700px;
+  width: 100%;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+}
+.modal-hero {
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-size: 5rem;
+}
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: rgba(0,0,0,0.5);
+  border: 1px solid var(--border);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+  z-index: 10;
+}
+.modal-close:hover { background: var(--red); border-color: var(--red); }
+.modal-content { padding: 24px; }
+.modal-title-row { margin-bottom: 20px; }
+.modal-genre { font-size: 0.72rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--blue); margin-bottom: 6px; }
+.modal-title { font-size: 1.6rem; font-weight: 900; margin-bottom: 4px; }
+.modal-subtitle { font-size: 0.85rem; color: var(--muted); }
+.modal-section { margin-bottom: 24px; }
+.modal-section-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.modal-section-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+.modal-desc { font-size: 0.92rem; color: var(--muted); line-height: 1.75; }
+.modal-codes-list { display: flex; flex-direction: column; gap: 8px; }
+.modal-code-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 14px;
+  background: var(--dark3);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  transition: border-color 0.15s;
+}
+.modal-code-row:hover { border-color: var(--border2); }
+.modal-code-tag {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.82rem;
+  color: var(--green);
+  font-weight: 700;
+}
+.modal-code-new { color: var(--red); font-size: 0.65rem; font-weight: 700; margin-left: 6px; }
+.modal-code-reward { font-size: 0.82rem; color: var(--muted); }
+.copy-btn {
+  background: var(--green);
+  color: #000;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 900;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.copy-btn:hover { opacity: 0.88; }
+.copy-btn.done { background: var(--blue); color: white; }
+.no-codes-box {
+  padding: 20px;
+  text-align: center;
+  background: var(--dark3);
+  border: 1px dashed var(--border);
+  border-radius: 9px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+.howto-steps { display: flex; flex-direction: column; gap: 10px; }
+.howto-step { display: flex; gap: 12px; align-items: flex-start; }
+.step-num {
+  background: var(--red);
+  color: white;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.step-text { font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
+.tag-list { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: var(--dark3);
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+.ai-section {
+  background: linear-gradient(135deg, rgba(155,89,245,0.1), rgba(68,136,255,0.1));
+  border: 1px solid rgba(155,89,245,0.3);
+  border-radius: 12px;
+  padding: 16px;
+}
+.ai-badge { display: flex; align-items: center; gap: 6px; font-size: 0.72rem; color: var(--purple); font-weight: 700; letter-spacing: 0.5px; margin-bottom: 10px; }
+.ai-output { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
+.ai-loading { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 0.85rem; }
+.ai-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--border);
+  border-top-color: var(--purple);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.modal-notice {
+  background: rgba(68,136,255,0.08);
+  border: 1px solid rgba(68,136,255,0.2);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.78rem;
+  color: var(--blue);
+  margin-top: 16px;
+}
+
+/* ========== TOAST ========== */
+.toast {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  background: var(--green);
+  color: #000;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.88rem;
+  z-index: 9999;
+  transform: translateY(80px);
+  opacity: 0;
+  transition: all 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+  pointer-events: none;
+}
+.toast.show { transform: translateY(0); opacity: 1; }
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1024px) {
+  .site-wrap { grid-template-columns: 200px 1fr; gap: 20px; }
+}
+@media (max-width: 768px) {
+  .site-wrap { grid-template-columns: 1fr; padding: 20px 16px; }
+  .sidebar { display: none; }
+  nav { display: none; }
+  .header-search input { width: 160px; }
+  .header-search input:focus { width: 200px; }
+  .games-grid { grid-template-columns: 1fr; }
+  .stats-strip { max-width: 100%; }
+}
+</style>
+</head>
+<body>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track" id="tickerTrack">
+    <span class="ticker-item">🔥 Grow a Garden: Roblox史上最速10億Visit達成！</span>
+    <span class="ticker-item">✅ Blox Fruits最新コード: LIGHTNINGABUSE (2x EXP 20分)</span>
+    <span class="ticker-item">🌲 99 Nights in the Forest: ジャングルバイオーム追加！</span>
+    <span class="ticker-item">🧠 Steal a Brainrot: コード調査中…</span>
+    <span class="ticker-item">⚽ Blue Lock: Rivals 急上昇中！</span>
+    <span class="ticker-item">🎣 Fisch: 毎週アップデート中！</span>
+    <span class="ticker-item">🔥 Grow a Garden: Roblox史上最速10億Visit達成！</span>
+    <span class="ticker-item">✅ Blox Fruits最新コード: LIGHTNINGABUSE (2x EXP 20分)</span>
+    <span class="ticker-item">🌲 99 Nights in the Forest: ジャングルバイオーム追加！</span>
+    <span class="ticker-item">🧠 Steal a Brainrot: コード調査中…</span>
+    <span class="ticker-item">⚽ Blue Lock: Rivals 急上昇中！</span>
+    <span class="ticker-item">🎣 Fisch: 毎週アップデート中！</span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">Ro<span class="white">Wiki</span><span class="badge">JP</span></a>
+    <nav>
+      <a href="index.html" class="active">🏠 トップ</a>
+      <a href="#ranking">📊 ランキング</a>
+      <a href="#codes">🎟 コード</a>
+      <a href="#wiki">📖 攻略</a>
+      <a href="#new">🆕 最新</a>
+    </nav>
+    <div class="header-search">
+      <input type="text" id="searchInput" placeholder="ゲームを検索…" oninput="onSearch(this.value)">
+      <span class="search-icon">🔍</span>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-eyebrow">
+    <span class="live-dot"></span>
+    毎日更新中 — <span id="heroDate"></span>
+  </div>
+  <h1>Roblox <span class="red">最強</span><br><span class="gold">Wiki</span> & コード</h1>
+  <p class="hero-sub">100本以上のRobloxゲームを掲載。最新コード・攻略・ランキングを毎日チェックして無料アイテムをゲット！</p>
+  <div class="stats-strip">
+    <div class="stat-cell">
+      <div class="stat-num" id="gameCount">25</div>
+      <div class="stat-label">掲載ゲーム</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num" id="codeCount">0</div>
+      <div class="stat-label">有効コード数</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num">毎日</div>
+      <div class="stat-label">更新頻度</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num">無料</div>
+      <div class="stat-label">完全無料</div>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN -->
+<div class="site-wrap">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-sticky">
+      <div class="sb-box">
+        <div class="sb-head">🔥 急上昇ランキング</div>
+        <div id="sbRankList"></div>
+      </div>
+      <div class="sb-box">
+        <div class="sb-head">🎮 ジャンルで絞り込む</div>
+        <div class="genre-pill-wrap" id="genrePills"></div>
+      </div>
+      <div class="sb-box">
+        <div class="sb-head">ℹ️ コードについて</div>
+        <div style="padding:12px 14px;font-size:0.78rem;color:var(--muted);line-height:1.7">
+          コードは予告なく期限切れになる場合があります。このサイトは毎日確認・更新しています。使えない場合はゲームの公式Discord/Twitterをチェックしてください。
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- CONTENT -->
+  <main class="content" id="ranking">
+    <div class="content-top">
+      <div class="section-h">
+        <span class="live-dot"></span>
+        今話題のゲーム
+        <span class="live-indicator" id="resultCount"></span>
+      </div>
+      <div class="sort-row">
+        <button class="sort-btn active" onclick="sortGames('rank', this)">人気順</button>
+        <button class="sort-btn" onclick="sortGames('codes', this)">コード数順</button>
+        <button class="sort-btn" onclick="sortGames('new', this)">新着</button>
+      </div>
+    </div>
+    <div class="games-grid" id="gamesGrid"></div>
+  </main>
+</div>
+
+<!-- MODAL -->
+<div class="overlay" id="overlay" onclick="handleOverlayClick(event)">
+  <div class="modal" id="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-hero" id="modalHero"></div>
+    <div class="modal-content">
+      <div class="modal-title-row" id="modalTitle"></div>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ===== DATA =====
+const GENRES = ['すべて','シミュレーション','アクション','ホラー','RPG','ロールプレイ','タワーディフェンス','スポーツ','FPS','コレクション','ファッション'];
+const GENRE_ICONS = {'シミュレーション':'🌱','アクション':'⚔️','ホラー':'👻','RPG':'🗡️','ロールプレイ':'🏙️','タワーディフェンス':'🗼','スポーツ':'⚽','FPS':'🔫','コレクション':'🐾','ファッション':'👗','すべて':'🌐'};
+const THUMB_COLORS = {
+  'シミュレーション':'linear-gradient(135deg,#0d2b0d,#1a5c1a)',
+  'アクション':'linear-gradient(135deg,#2b0d00,#5c1a00)',
+  'ホラー':'linear-gradient(135deg,#0d0d0d,#1a0d1a)',
+  'RPG':'linear-gradient(135deg,#0a0a33,#1a1a66)',
+  'ロールプレイ':'linear-gradient(135deg,#1a0d33,#3d1a66)',
+  'タワーディフェンス':'linear-gradient(135deg,#1a001a,#3d003d)',
+  'スポーツ':'linear-gradient(135deg,#001a0d,#003d1a)',
+  'FPS':'linear-gradient(135deg,#0d0d0d,#1a1a1a)',
+  'コレクション':'linear-gradient(135deg,#0d0033,#1a0066)',
+  'ファッション':'linear-gradient(135deg,#2b001a,#5c0033)',
+};
+
+let GAMES = [];
+let filteredGames = [];
+let activeGenre = 'すべて';
+let activeSort = 'rank';
+let searchQuery = '';
+
+// ===== LOAD DATA =====
+async function loadGames() {
+  try {
+    const res = await fetch('data/games.json');
+    GAMES = await res.json();
+  } catch(e) {
+    // Fallback: use inline sample data if fetch fails
+    GAMES = getSampleGames();
+  }
+  init();
+}
+
+function getSampleGames() {
+  return [
+    { id:'blox-fruits', name:'Blox Fruits', nameJp:'ブロックスフルーツ', genre:'RPG', icon:'🍎', rank:1, visits:'529億+', concurrent:'100万+', rating:5, hot:false, updated:'2026-03-28', desc:'ONE PIECEをリスペクトしたアクションRPG。悪魔の実を食べて特殊能力を習得し海を冒険するRoblox歴代2位の超定番ゲーム。', longDesc:'Gamer Robot Inc開発のアクションRPG。Marine/Pirateを選んで悪魔の実の能力で戦いながら三つの海を探索。', howto:['Blox Fruitsを起動してMarine/Pirateを選択','左側のコンパスアイコン（ギフトアイコン）をクリック','コードを入力してRedeemボタンを押す'], codes:[{code:'LIGHTNINGABUSE',reward:'2x EXP 20分',new:true},{code:'KITT_RESET',reward:'ステータスリセット1回',new:false},{code:'SUB2OFFICIALNOOBIE',reward:'2x EXP 20分',new:false},{code:'AXIORE',reward:'2x EXP 20分',new:false},{code:'BLUXXY',reward:'2x EXP 20分',new:false},{code:'SUB2GAMERROBOT_EXP1',reward:'2x EXP 30分',new:false},{code:'BIGNEWS',reward:'称号 BIGNEWS',new:false}], tags:['アニメ','海賊','RPG','PvP'] },
+    { id:'grow-a-garden', name:'Grow a Garden', nameJp:'ガーデンを育てよう', genre:'シミュレーション', icon:'🌱', rank:2, visits:'213億+', concurrent:'10M記録', rating:5, hot:true, updated:'2026-03-28', desc:'種を植えて育てて売る農業シミュレーション。Roblox史上最速で10億Visit突破！', longDesc:'シンプルな農業ゲームながらRoblox史上最速で10億visitを達成（33日）した超人気作。', howto:['ゲーム内の歯車アイコン（Settings）を開く','一番下にスクロールしてRedeem Codesを選択','コードを入力してClaimボタンを押す'], codes:[{code:'RDCAward',reward:'コスメアイテム',new:true},{code:'GARDEN2025',reward:'シード×5 + コスメ',new:false}], tags:['農業','まったり','コレクション'] },
+    { id:'brookhaven-rp', name:'Brookhaven RP', nameJp:'ブルックヘイブンRP', genre:'ロールプレイ', icon:'🏙️', rank:3, visits:'693億+', concurrent:'100万+', rating:5, hot:false, updated:'2026-03-28', desc:'Roblox史上最多Visit数を誇るロールプレイゲーム。目的なし・プレッシャーなしの自由な街生活。', longDesc:'2020年4月にWolfpaqが開発したRoblox史上最人気ゲーム。完全自由ロールプレイ空間。', howto:['コードシステムはありません','ゲーム内アイテムはRobuxで購入','無料アイテムはイベントで入手'], codes:[], tags:['ロールプレイ','自由','生活'] },
+    { id:'99-nights-in-the-forest', name:'99 Nights in the Forest', nameJp:'森の99日間', genre:'ホラー', icon:'🌲', rank:4, visits:'急上昇中', concurrent:'44万+', rating:4, hot:true, updated:'2026-03-28', desc:'暗い森で99夜を生き延びるホラーサバイバル。2026年最大のホラーブレイクアウト作品！', longDesc:'最大4人で協力して99夜を森で生き延びるホラーゲーム。ジャングルバイオームアップデート（2026年3月）で大幅強化。', howto:['メインロビーに移動（ゲーム中は不可）','チャット欄にコードを直接入力してEnter','Code Redeemed!と表示されたら成功'], codes:[{code:'LAUNCH',reward:'ジェム×10',new:false},{code:'JUNGLE',reward:'ジェム×5',new:false}], tags:['ホラー','サバイバル','協力プレイ'] },
+    { id:'steal-a-brainrot', name:'Steal a Brainrot', nameJp:'ブレインロットを盗め', genre:'アクション', icon:'🧠', rank:5, visits:'急速拡大中', concurrent:'大人気', rating:4, hot:true, updated:'2026-03-28', desc:'ミームキャラ「ブレインロット」を他プレイヤーの基地から盗み合うゲーム。', longDesc:'プレイヤーはブレインロットキャラを配置した基地を持ち、他プレイヤーの基地からキャラを盗む。希少なブレインロットほど高価値。', howto:['Steal a Brainrotを起動','左側のSHOPメニューを開く','下にスクロールしてコード入力欄にコードを入力'], codes:[], tags:['ミーム','ブレインロット','基地防衛'] },
+    { id:'adopt-me', name:'Adopt Me!', nameJp:'アドプト・ミー', genre:'コレクション', icon:'🐾', rank:6, visits:'史上3位', concurrent:'53万+', rating:5, hot:false, updated:'2026-03-28', desc:'ペットを育てて・トレードして・コレクションするRoblox定番ゲーム。', longDesc:'定期的な新ペット追加と限定イベントで長期にわたって人気を維持。', howto:['Adopt Me!のメインワールドに入る','画面上部のCodesボタンを探す','コードを入力して確定'], codes:[{code:'SUMMERMATCH',reward:'バックス',new:false}], tags:['ペット','コレクション','トレード'] },
+    { id:'doors', name:'Doors', nameJp:'ドアーズ', genre:'ホラー', icon:'🚪', rank:7, visits:'定番人気', concurrent:'高評価', rating:5, hot:false, updated:'2026-03-28', desc:'手続き型生成ホテルで扉を開けながら脱出するホラーゲーム。Roblox Innovation Awards受賞。', longDesc:'最大4人で協力してホテルの扉を番号順に開けながら脱出する。各エンティティは独自の行動パターンを持つ。', howto:['コード入力UIはありません','定期アップデートで無料アイテムが配布される場合あり','公式Discordで最新情報をチェック'], codes:[], tags:['ホラー','協力プレイ','手続き生成'] },
+    { id:'murder-mystery-2', name:'Murder Mystery 2', nameJp:'マーダーミステリー2', genre:'アクション', icon:'🔍', rank:8, visits:'定番人気', concurrent:'高継続率', rating:4, hot:false, updated:'2026-03-28', desc:'犯人・保安官・無実の3役でプレイする推理×心理戦ゲーム。中毒性抜群。', longDesc:'各ラウンドでランダムに犯人・保安官・無実に割り振られる。短いラウンドと多様な役割が高いリプレイ性を生む。', howto:['Murder Mystery 2を起動','画面右上のInventory → Codesを選択','コードを入力して確定'], codes:[{code:'COMB4T2',reward:'コスメアイテム',new:false},{code:'SK3TCH',reward:'コスメアイテム',new:false}], tags:['推理','心理戦','マルチプレイ'] },
+    { id:'anime-vanguards', name:'Anime Vanguards', nameJp:'アニメ・ヴァンガーズ', genre:'タワーディフェンス', icon:'⚔️', rank:9, visits:'急上昇中', concurrent:'アニメ系No.1', rating:4, hot:true, updated:'2026-03-28', desc:'ドラゴンボール・ナルト・ワンピースなどのアニメキャラで守るタワーディフェンス。', longDesc:'複数のアニメ宇宙が衝突した世界でアニメキャラをタワーとして配置して敵を撃退する。コードは定期的に配布される。', howto:['Anime Vanguardsを起動してロビーに入る','画面上のCodesボタンをクリック','コードを入力してRedeemを押す'], codes:[{code:'LAUNCH2024',reward:'ジェム×500',new:false},{code:'VANGUARDS1M',reward:'ジェム×300',new:false}], tags:['アニメ','タワーディフェンス','ガチャ'] },
+    { id:'fisch', name:'Fisch', nameJp:'フィッシュ', genre:'シミュレーション', icon:'🎣', rank:10, visits:'急上昇中', concurrent:'釣りNo.1', rating:5, hot:true, updated:'2026-03-28', desc:'深海・火山・アトランティスまで探索できる本格釣りゲーム。毎週アップデートで常に新鮮！', longDesc:'複数の島と海域を探索しながら釣りをするシミュレーション×アドベンチャー。週次・月次の定期アップデートが高評価。', howto:['Fischを起動','左側のメニューからCodesを選択','コードを入力して確定'], codes:[{code:'FISHLAUNCH',reward:'釣り竿強化',new:false},{code:'DEEPSEA',reward:'レアルアー×3',new:false}], tags:['釣り','探索','RPG'] },
+    { id:'blue-lock-rivals', name:'Blue Lock: Rivals', nameJp:'ブルーロック・ライバルズ', genre:'スポーツ', icon:'⚽', rank:11, visits:'急上昇中', concurrent:'急上昇', rating:4, hot:true, updated:'2026-03-28', desc:'「ブルーロック」アニメの世界でプレイする激熱サッカーゲーム！', longDesc:'人気アニメ「ブルーロック」の世界観を再現したRobloxサッカーゲーム。コードでスタイルスピンや追加フローが手に入る。', howto:['Blue Lock: Rivalsを起動','メインメニューのCodesボタンをクリック','コードを入力して確定'], codes:[{code:'BLUELOCK500K',reward:'スタイルスピン×3',new:false},{code:'RIVALSLAUNCH',reward:'フロースピン×2',new:false}], tags:['サッカー','アニメ','スポーツ'] },
+    { id:'basketball-zero', name:'Basketball Zero', nameJp:'バスケットボールゼロ', genre:'スポーツ', icon:'🏀', rank:12, visits:'急上昇', concurrent:'スポーツNo.1', rating:5, hot:true, updated:'2026-03-28', desc:'ストリートスタイルの5対5バスケ！ド派手なスキル演出が炸裂するテンポ速い試合展開。', longDesc:'本格5対5のストリートバスケ。各選手に固有のスキルアニメーションがある。定期的なコード配布で盛り上がりが継続中。', howto:['Basketball Zeroを起動','メインメニューのCodesボタンをクリック','コードを入力してRedeemを押す'], codes:[{code:'BBALL1M',reward:'コイン×5000',new:false},{code:'STREETBALL',reward:'スキン（レア）',new:false}], tags:['バスケ','スポーツ','アニメ'] },
+    { id:'phantom-forces', name:'Phantom Forces', nameJp:'ファントムフォーシズ', genre:'FPS', icon:'🔫', rank:13, visits:'FPS定番', concurrent:'高スキル激戦区', rating:5, hot:false, updated:'2026-03-28', desc:'100種類以上の武器カスタマイズを誇るRoblox最高峰FPS。本格派向けシューター。', longDesc:'StyLiS Studios開発のRoblox最強FPS。銃器100種類以上でバレル・グリップ・スコープ・弾薬など細かくカスタマイズ可能。', howto:['Playtimeベースの報酬システムがあります','コード入力システムはありません','毎週のXPブーストイベントを活用しよう'], codes:[], tags:['FPS','シューター','武器カスタマイズ'] },
+    { id:'pet-simulator-99', name:'Pet Simulator 99', nameJp:'ペットシミュレーター99', genre:'コレクション', icon:'🐶', rank:14, visits:'超定番シリーズ', concurrent:'安定した高人気', rating:4, hot:false, updated:'2026-03-28', desc:'ペットを集めてパワーアップ・トレードするRoblox定番コレクションゲームシリーズ最新作。', longDesc:'Big Games開発のPet Simulatorシリーズ最新章。ペットを孵化させアップグレードして新エリアを解放していく。', howto:['Pet Simulator 99を起動','左下のプレゼントアイコンをクリック','コードを入力して確定'], codes:[{code:'PETSIM99LAUNCH',reward:'無料ダイヤ',new:false},{code:'BIGUPDATE',reward:'ジェム×500',new:false}], tags:['ペット','コレクション','経済'] },
+    { id:'bee-swarm-simulator', name:'Bee Swarm Simulator', nameJp:'ビースウォームシミュレーター', genre:'シミュレーション', icon:'🐝', rank:15, visits:'超定番', concurrent:'7年以上の長寿', rating:5, hot:false, updated:'2026-03-28', desc:'蜂を育てて花粉を集め蜂蜜を作るシミュレーション。7年以上続く超長寿タイトル！', longDesc:'Onett開発の農業×育成シミュレーション。定期的なアップデートで7年以上プレイヤーが継続的に遊んでいる珍しい長寿作品。', howto:['Bee Swarm Simulatorを起動','Onett（NPC）を見つけてクリック','コードをチャットに入力'], codes:[{code:'Marching',reward:'蜂蜜×10,000',new:false},{code:'Luther',reward:'ムカデギフト',new:false},{code:'Connoisseur',reward:'コイン+ギフト',new:false}], tags:['蜂','農業','シミュレーション'] },
+  ];
+}
+
+// ===== INIT =====
+function init() {
+  // Count codes
+  const totalCodes = GAMES.reduce((s, g) => s + g.codes.length, 0);
+  document.getElementById('codeCount').textContent = totalCodes;
+  document.getElementById('gameCount').textContent = GAMES.length;
+
+  // Hero date
+  const d = new Date();
+  document.getElementById('heroDate').textContent = `${d.getFullYear()}年${d.getMonth()+1}月${d.getDate()}日`;
+
+  renderSidebar();
+  renderGenrePills();
+  applyFilters();
+}
+
+// ===== SIDEBAR =====
+function renderSidebar() {
+  const hot = [...GAMES].filter(g => g.hot).slice(0, 8);
+  const top = [...GAMES].sort((a,b) => a.rank - b.rank).slice(0, 10);
+  const list = [...new Map([...hot, ...top].map(g => [g.id, g])).values()].slice(0, 10);
+  document.getElementById('sbRankList').innerHTML = list.map(g => `
+    <a class="sb-item${g.hot?' active':''}" onclick="openModal('${g.id}'); return false;" href="#">
+      <span class="sb-icon">${g.icon}</span>
+      <span class="sb-name">${g.name}</span>
+      ${g.hot ? '<span class="sb-hot-dot"></span>' : ''}
+      <span class="sb-rank">#${g.rank}</span>
+    </a>
+  `).join('');
+}
+
+// ===== GENRE PILLS =====
+function renderGenrePills() {
+  document.getElementById('genrePills').innerHTML = GENRES.map(g => `
+    <button class="genre-pill${g === activeGenre ? ' active' : ''}" onclick="setGenre('${g}')">${GENRE_ICONS[g] || ''} ${g}</button>
+  `).join('');
+}
+
+function setGenre(genre) {
+  activeGenre = genre;
+  renderGenrePills();
+  applyFilters();
+}
+
+// ===== FILTERS & SORT =====
+function onSearch(q) {
+  searchQuery = q.toLowerCase();
+  applyFilters();
+}
+
+function sortGames(type, btn) {
+  activeSort = type;
+  document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  applyFilters();
+}
+
+function applyFilters() {
+  let games = [...GAMES];
+  if (activeGenre !== 'すべて') games = games.filter(g => g.genre === activeGenre);
+  if (searchQuery) games = games.filter(g =>
+    g.name.toLowerCase().includes(searchQuery) ||
+    (g.nameJp || '').toLowerCase().includes(searchQuery) ||
+    g.desc.toLowerCase().includes(searchQuery) ||
+    (g.tags || []).some(t => t.toLowerCase().includes(searchQuery))
+  );
+  if (activeSort === 'rank') games.sort((a,b) => a.rank - b.rank);
+  else if (activeSort === 'codes') games.sort((a,b) => b.codes.length - a.codes.length);
+  else if (activeSort === 'new') games.sort((a,b) => (b.updated||'').localeCompare(a.updated||''));
+  filteredGames = games;
+  document.getElementById('resultCount').textContent = `${games.length}件`;
+  renderGrid(games);
+}
+
+// ===== CARD RENDER =====
+function renderGrid(games) {
+  const grid = document.getElementById('gamesGrid');
+  if (!games.length) {
+    grid.innerHTML = '<div class="empty-state">😢 該当するゲームが見つかりませんでした</div>';
+    return;
+  }
+  grid.innerHTML = games.map(renderCard).join('');
+}
+
+function renderCard(g) {
+  const bg = THUMB_COLORS[g.genre] || 'linear-gradient(135deg,#1a1a2e,#2a2a4e)';
+  const rankClass = g.rank <= 3 ? 'top3' : '';
+  const codesHtml = g.codes.length > 0
+    ? g.codes.slice(0, 3).map(c => `
+      <div class="code-row">
+        <div class="code-chip${c.new?' new-code':''}" onclick="event.stopPropagation();copyCode('${c.code}')" title="クリックでコピー">${c.code}</div>
+        <div class="code-reward-mini">${c.reward}</div>
+      </div>`).join('')
+    : '<div class="no-code-msg">コード現在なし / 調査中</div>';
+
+  const badgeCount = g.codes.length > 0 ? `<span class="code-count-badge">${g.codes.length}</span>` : '';
+
+  return `
+    <article class="game-card" onclick="openModal('${g.id}')">
+      <div class="card-thumb" style="background:${bg}">
+        <span class="card-thumb-emoji">${g.icon}</span>
+        <div class="card-badge-rank ${rankClass}">#${g.rank}</div>
+        ${g.hot ? '<div class="card-badge-hot">🔥 HOT</div>' : ''}
+      </div>
+      <div class="card-body">
+        <div class="card-genre-tag">${GENRE_ICONS[g.genre]||''} ${g.genre}</div>
+        <h2 class="card-title">${g.name}</h2>
+        <p class="card-desc">${g.desc}</p>
+        <div class="card-meta">
+          <div class="card-meta-item">📊 <strong>${g.visits}</strong></div>
+          <div class="card-meta-item">⭐ <strong>${'★'.repeat(g.rating)}${'☆'.repeat(5-g.rating)}</strong></div>
+        </div>
+        <div class="codes-mini">
+          <div class="codes-mini-head">
+            <div class="codes-mini-label">🎟 有効コード ${badgeCount}</div>
+          </div>
+          <div class="codes-mini-list">${codesHtml}</div>
+        </div>
+        <div class="card-actions">
+          <button class="card-btn card-btn-primary" onclick="event.stopPropagation();openModal('${g.id}')">詳細 & 全コード</button>
+          <button class="card-btn card-btn-secondary" onclick="event.stopPropagation();openModal('${g.id}')">攻略Wiki</button>
+        </div>
+      </div>
+    </article>`;
+}
+
+// ===== MODAL =====
+function openModal(id) {
+  const g = GAMES.find(x => x.id === id);
+  if (!g) return;
+
+  const bg = THUMB_COLORS[g.genre] || 'linear-gradient(135deg,#1a1a2e,#2a2a4e)';
+  document.getElementById('modalHero').style.background = bg;
+  document.getElementById('modalHero').innerHTML = `<span style="font-size:5rem;filter:drop-shadow(0 8px 20px rgba(0,0,0,0.6))">${g.icon}</span>`;
+
+  document.getElementById('modalTitle').innerHTML = `
+    <div class="modal-genre">${GENRE_ICONS[g.genre]||''} ${g.genre}</div>
+    <div class="modal-title">${g.name}</div>
+    <div class="modal-subtitle">${g.nameJp || ''} &nbsp;|&nbsp; 訪問数: ${g.visits} &nbsp;|&nbsp; ${'★'.repeat(g.rating)}</div>
+  `;
+
+  const codesHtml = g.codes.length > 0
+    ? `<div class="modal-codes-list">${g.codes.map(c => `
+      <div class="modal-code-row">
+        <div class="modal-code-tag">${c.code}${c.new?'<span class="modal-code-new">NEW</span>':''}</div>
+        <div class="modal-code-reward">${c.reward}</div>
+        <button class="copy-btn" onclick="copyCode('${c.code}', this)">コピー</button>
+      </div>`).join('')}</div>`
+    : `<div class="no-codes-box">
+        😔 現在利用可能なコードはありません。<br>
+        公式Discord/Twitterで最新情報をチェックしてください。<br>
+        このページを<strong>ブックマーク</strong>しておくと新しいコードがわかります！
+      </div>`;
+
+  const tagsHtml = (g.tags||[]).map(t => `<span class="tag">${t}</span>`).join('');
+
+  document.getElementById('modalBody').innerHTML = `
+    <div class="modal-section">
+      <div class="modal-section-title">ゲーム概要</div>
+      <div class="modal-desc">${g.longDesc || g.desc}</div>
+    </div>
+
+    <div class="modal-section" id="wiki">
+      <div class="modal-section-title">🎟 有効コード（${g.codes.length}個）— ${g.updated}確認済み</div>
+      ${codesHtml}
+    </div>
+
+    <div class="modal-section">
+      <div class="modal-section-title">📋 コードの入力方法</div>
+      <div class="howto-steps">
+        ${(g.howto||[]).map((s,i) => `
+          <div class="howto-step">
+            <div class="step-num">${i+1}</div>
+            <div class="step-text">${s}</div>
+          </div>`).join('')}
+      </div>
+    </div>
+
+    <div class="modal-section">
+      <div class="modal-section-title">🤖 AI攻略アドバイス</div>
+      <div class="ai-section" id="aiSection">
+        <div class="ai-badge">✨ Claude AI powered</div>
+        <div class="ai-loading" id="aiLoading">
+          <div class="ai-spinner"></div>
+          ${g.name}の攻略アドバイスを生成中…
+        </div>
+        <div class="ai-output" id="aiOutput" style="display:none"></div>
+      </div>
+    </div>
+
+    ${tagsHtml ? `<div class="modal-section"><div class="modal-section-title">タグ</div><div class="tag-list">${tagsHtml}</div></div>` : ''}
+
+    <div class="modal-notice">
+      ℹ️ コードは予告なく期限切れになる場合があります。毎日更新していますが、使えない場合は公式SNSをご確認ください。
+    </div>
+  `;
+
+  document.getElementById('overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+
+  // AI 攻略アドバイス生成
+  generateAITip(g);
+}
+
+async function generateAITip(g) {
+  const aiOutput = document.getElementById('aiOutput');
+  const aiLoading = document.getElementById('aiLoading');
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        system: 'あなたはRobloxゲームの日本語攻略アドバイザーです。簡潔で実用的な初心者向けアドバイスを3〜4文で返してください。絵文字を適度に使い、フレンドリーなトーンで。',
+        messages: [{ role: 'user', content: `「${g.name}」（${g.genre}ジャンル）の初心者向け攻略アドバイスを教えてください。ゲーム説明: ${g.desc}` }]
+      })
+    });
+    const data = await res.json();
+    const text = data.content?.map(c => c.text || '').join('') || '';
+    aiLoading.style.display = 'none';
+    aiOutput.style.display = 'block';
+    aiOutput.textContent = text || 'アドバイスを取得できませんでした。';
+  } catch(e) {
+    aiLoading.style.display = 'none';
+    aiOutput.style.display = 'block';
+    aiOutput.textContent = `🎮 ${g.name}を楽しむには、まずゲームのチュートリアルをしっかりこなすことが大切です！コードがある場合は最初に全て入力しておくと有利にスタートできます。`;
+  }
+}
+
+function closeModal() {
+  document.getElementById('overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function handleOverlayClick(e) {
+  if (e.target === document.getElementById('overlay')) closeModal();
+}
+
+// ===== COPY =====
+function copyCode(code, btn) {
+  navigator.clipboard.writeText(code).then(() => {
+    showToast(`✅ コピー完了: ${code}`);
+    if (btn) {
+      const orig = btn.textContent;
+      btn.textContent = '✓ 完了';
+      btn.classList.add('done');
+      setTimeout(() => { btn.textContent = orig; btn.classList.remove('done'); }, 2000);
+    }
+  }).catch(() => {
+    showToast(`📋 コード: ${code}`);
+  });
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2500);
+}
+
+// ===== KEYBOARD =====
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeModal();
+  if (e.key === '/' && document.activeElement.tagName !== 'INPUT') {
+    e.preventDefault();
+    document.getElementById('searchInput').focus();
+  }
+});
+
+// ===== START =====
+loadGames();
+</script>
+</body>
+</html>
